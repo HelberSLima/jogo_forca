@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter&family=Lato:wght@300&family=Lexend+Deca&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	user-select: none;
+}
+
+body {
+	line-height: 1.6;
+	background-color: #d6d6d8;
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+	height: calc(var(--vh, 1vh) * 100);
+}
+
+.container-top {
+	max-width: 1400px;
+	height: 10%;
+	margin: auto;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.container-top img {
+	margin: 0 8px;
+	height: 90%;
+	max-height: 60px;
+}
+
+h1{
+	font-family: Lato, Arial, Helvetica, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	color: #0A3871;
+	border: #0A3871;
+}
+
+main.container-main {
+	display: flex; /* flex */
+	flex-direction: column;
+	height: 90%;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.btn {
+	font-family: 'Inter', sans-serif;
+	width: 295px;
+	height: 67px;
+	border-radius: 40px;
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+	transition: transform 200ms, box-shadow 200ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn:hover {
+	transform: translate(1px, 1px);
+	box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+	transform: translate(3px, 3px);
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-one {
+	background-color: #0A3871;
+	color: #FFF;
+	border: none;
+}
+
+.btn-two {
+	background-color: #FFF;
+	color: #0A3871;
+	border: 2px solid #0A3871;
+}
+
+/*FOOTER*/
+footer {
+	max-width: 1440px;
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 20px;
+	padding: 10px 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.img-wrapper {
+	max-width: 45px;
+	position: relative;
+}
+
+.perfil {
+	width: 100%;
+	border-radius: 50%;
+	display: block;
+}
+
+.img-wrapper::before {
+	content: "";
+	position: absolute;
+	inset: -10px;
+	border: 6px solid #F3F5FC;
+	border-top-color: #003eb3;
+	border-bottom-color: #003eb3;
+	border-radius: 50%;
+	z-index: -1;
+	animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+	to{
+		transform: rotate(350deg);
+	}
+}
+
+.links, .nome {
+	display: flex;
+	align-items: center;
+}
+
+.links {
+	justify-content: space-around;
+}

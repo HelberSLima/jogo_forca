@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0A3871">
+	<link rel="icon" type="image/png" sizes="32x32" href="image/top.svg">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<title>Jogo da forca</title>
+</head>
+<body>
+	<div class="container">
+		<div class="container-top">
+			<img src="image/top.svg" alt="Logo">	
+		</div>
+		<main class="container-main">
+			<svg viewBox="0 0 294 360" id="desenho">
+				<circle id="cabeca" class="array-desenho"/>
+				<rect id="corpo" class="array-desenho"/>
+				<rect id="braco-esquerdo" class="array-desenho"/>
+				<rect id="braco-direito" class="array-desenho"/>
+				<rect id="perna-esquerda" class="array-desenho"/>
+				<rect id="perna-direita" class="array-desenho"/>
+
+				<rect id="corda"/>
+				<rect id="haste-inclinada"/>
+				<rect id="haste"/>
+				<rect id="base"/>
+			</svg>
+			<section id="container-word"></section>
+			<section id="container-teclado">
+				<button id="btn_q">Q</button>
+				<button id="btn_w">W</button>
+				<button id="btn_e">E</button>
+				<button id="btn_r">R</button>
+				<button id="btn_t">T</button>
+				<button id="btn_y">Y</button>
+				<button id="btn_u">U</button>
+				<button id="btn_i">I</button>
+				<button id="btn_o">O</button>
+				<button id="btn_p">P</button>
+				<button id="btn_a">A</button>
+				<button id="btn_s">S</button>
+				<button id="btn_d">D</button>
+				<button id="btn_f">F</button>
+				<button id="btn_g">G</button>
+				<button id="btn_h">H</button>
+				<button id="btn_j">J</button>
+				<button id="btn_k">K</button>
+				<button id="btn_l">L</button>
+				<button id="btn_z">Z</button>
+				<button id="btn_x">X</button>
+				<button id="btn_c">C</button>
+				<button id="btn_v">V</button>
+				<button id="btn_b">B</button>
+				<button id="btn_n">N</button>
+				<button id="btn_m">M</button>
+				<button id="btn_sair">SAIR</button>
+			</section>
+		</main>
+	</div>
+
+	<footer id="footer">
+		<div class="img-wrapper">
+			<img class="perfil" src="image/Picsart_Helber.png">
+		</div>
+		<div class="container-links">
+			<div class="links">
+				<a href="https://github.com/HelberSLima" target="_blank"><img src="image/001-github.png"></a>
+				<a href="https://www.instagram.com/helber_slima/" target="_blank"><img src="image/002-instagram.png"></a>
+				<a href="https://www.linkedin.com/in/helber-de-souza-lima-b65ab86a/" target="_blank"><img src="image/linkedin.png"></a>
+			</div>
+			<span class="nome"><span style="font-size: 20px">&#169;</span>HELBER LIMA</span>
+		</div>
+	</footer>
+	<div class="container-WinLoss formatacao-fixed">
+		<div class="winloss animate__animated animate__zoomIn">
+			<span class="btn mensagem-win-loss"></span>
+			<a href="" class="btn">Jogar novamente</a>
+			<a href="../index.html" class="btn">Menu Inicial</a>
+		</div>
+	</div>
+	<div class="container-sair formatacao-fixed">
+		<div class="winloss menu-interno animate__animated">
+			<span class="btn" onclick="continuar()">Continuar</span>
+			<a href="" class="btn">Reiniciar</a>
+			<a href="../index.html" class="btn">Menu Inicial</a>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

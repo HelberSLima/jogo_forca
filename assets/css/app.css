@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter&family=Lato:wght@300&family=Lexend+Deca&display=swap');
+
+:root {
+	--color-desenho: #0A3871;
+    --board-height: min(100em/2.15,25vh);
+    --board-gap: 0.25rem;
+}
+
+main.container-main {
+	justify-content: flex-end;
+	position: relative;
+}
+
+/* desenho */
+#desenho {
+	width: 100%;
+	height: 50%;
+	position:  absolute;
+	top: -4%;
+}
+
+#base {
+	x: 0;
+	y: 355;
+	width: 294px;
+	height: 5px;
+	rx: 2.5;
+	fill: var(--color-desenho);
+}
+
+#haste {
+	x: 78;
+	width: 4.5px;
+	height: 360px;
+	rx: 2.5;
+	fill: var(--color-desenho);
+}
+
+#haste-inclinada {
+	x: 78;
+	width: 173px;
+	height: 4.5px;
+	rx: 2.5;
+	fill: var(--color-desenho);
+}
+
+#corda {
+	x: 246.5;
+	width: 4.5px;
+	height: 48px;
+	rx: 2.5;
+	fill: var(--color-desenho);
+}
+
+#cabeca {
+	cx: 248.5;
+	cy: 79;
+	r: 31;
+	stroke: var(--color-desenho);
+	stroke-width: 4.5;
+	fill: transparent !important;
+}
+
+#corpo {
+	x: 246.5;
+	y: 110;
+	width: 4.5px;
+	height: 131px;
+	fill: var(--color-desenho);
+}
+
+#braco-esquerdo {
+	width: 5px;
+	height: 70px;
+	rx: 2.5;
+	transform: matrix(-0.9, -0.5, -0.5, 0.9, 252, 110);
+	fill: var(--color-desenho);
+}
+
+#braco-direito {
+	width: 5px;
+	height: 70px;
+	rx: 2.5px;
+	transform: matrix(-0.9, 0.5, 0.5, 0.9, 250, 107.5);
+	fill: var(--color-desenho);
+}
+
+#perna-esquerda {
+	width: 5px;
+	height: 70px;
+	rx: 2.5;
+	transform: matrix(-0.9, -0.5, -0.5, 0.9, 252.1, 238);
+	fill: var(--color-desenho);
+}
+
+#perna-direita {
+	width: 5px;
+	height: 70px;
+	rx: 2.5;
+	transform: matrix(-0.9, 0.5, 0.5, 0.9, 250.2, 237);
+	fill: var(--color-desenho);
+}
+
+.array-desenho {
+	opacity: 0;
+	transition: opacity .5s ease-in-out;
+}
+
+/* tabela de letras */
+#container-word {
+	height: 20%;
+	width: 100%;
+	padding: 0 0.5em 0 0.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: 800px;
+	gap: 2.5%;
+}
+
+.letter {
+	height: 100%;
+	max-height: 90px;
+	width: 100%;
+	max-width: 80.86px;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	font-size: calc(1rem + 80%);
+	color: var(--color-desenho);
+}
+
+.letter::after {
+	content: '';
+	border-radius: 8px;
+	bottom: 0;
+	background-color: var(--color-desenho);
+	height: 5px;
+	width: 100%;
+	position: absolute;
+}
+
+/* teclado */
+#container-teclado{
+	user-select: none;
+	flex-shrink: 0;
+	padding: 0 0.5em 0.3em 0.5em;
+	margin: 0;
+	box-sizing: border-box;
+	height: var(--board-height);
+	font-size: min(4rem, calc(var(--board-height) / 7));
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(32, 1fr);
+	grid-gap: var(--board-gap);
+	width: 100%;
+	max-width: 720px;
+}
+
+button {
+	user-select: none;
+	outline: none;
+	background-color: var(--color-desenho);
+	grid-column: span 3;
+	display: flex;
+	font-size: 70%;
+	line-height: 1rem;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	font-weight: bold;
+	font-family: 'Inter', sans-serif;
+	cursor: pointer;
+	border: none;
+	color: #FAFAFF;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+button:active {
+	border-radius: 15%;
+	transform: scale(1.3);
+	transition: transform .15s ease-in-out;
+}
+
+button.clicado {
+	background-color: #6C85BD;
+	color: #BABAD8;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+	background 0.3s ease-in-out;
+}
+
+#btn_a {
+	grid-column: 2 / span 3;
+}
+
+#btn_z {
+	grid-column: 3 / span 3;
+}
+
+#btn_sair {
+	grid-row: 3 span 1;
+	grid-column: 25 / span 8;
+}
+
+/*container da mensagem de vitória ou derrota*/
+.formatacao-fixed {
+	position: fixed;
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 100);
+	background-color: rgba(0,0,0,.5);
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.winloss {
+	margin: 2% 2%;
+	width: 100%;
+	max-width: 600px;
+	height: 100%;
+	max-height: 400px;
+	background-color: #F3F5FCE9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+	border-radius: 50px 10px 50px;
+}
+
+.container-WinLoss span {
+	box-shadow: none;
+}
+
+.winloss .btn {
+	color: #FFFFFF;
+	background-color: var(--color-desenho);
+	font-weight: bold;
+	font-size: 1rem;
+	width: 70%;
+}
+
+.mensagem-win-loss {
+	animation: vaievem infinite 1s ease;
+	margin-bottom: 10px;
+}
+
+@keyframes vaievem {
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.win {
+	background-color: #75C061 !important;
+}
+
+.loss {
+	background-color: #D76464  !important;
+}
+
+.menu-interno {
+	animation-name: fadeInDown;
+	--animate-duration: .3s;
+}
