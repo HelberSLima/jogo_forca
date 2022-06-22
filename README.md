@@ -8,7 +8,7 @@
 * Para que o usuário ganhe o jogo é necessário que ele tente adivinhar a palavra digitado as letras.
 * O usuário terá 6 chances, sendo que cada erro aparecerá uma parte do boneco na tela.
 * Vencerá o jogo se o usuário conseguir montar a palavra inteira sem que as 6 chances se esgote, caso contrário o usuário irá perder.
-* Na duas oções (vitório ou derrota), irá aparecer um pequeno menu, que conterá os botões de jogar novamente ou voltar para a tela inicial.
+* Na duas oções (vitória ou derrota), irá aparecer um pequeno menu, que conterá os botões de jogar novamente ou voltar para a tela inicial.
 * Também no teclado virtual, conterá um botão de sair, caso o usuário queira finalizar o jogo antes de ele acabar.
 
 ## Ferramentas:
